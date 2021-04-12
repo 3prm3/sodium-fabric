@@ -1,7 +1,8 @@
 package me.jellysquid.mods.sodium.client.render.chunk.multidraw;
 
+import me.jellysquid.mods.sodium.client.SodiumHooks;
+import me.jellysquid.mods.sodium.client.gl.attribute.GlVertexFormat;
 import java.util.Optional;
-
 import me.jellysquid.mods.sodium.client.gl.shader.GlShader;
 import me.jellysquid.mods.sodium.client.gl.shader.ShaderConstants;
 import me.jellysquid.mods.sodium.client.gl.shader.ShaderLoader;
@@ -28,6 +29,8 @@ public abstract class ChunkRenderBackendMultiDraw<T extends ChunkGraphicsState> 
     }
 
     @Override
+
+
     protected GlShader createVertexShader(ChunkFogMode fogMode, BlockRenderPass pass) {
         Optional<String> irisVertexShader = pass == BlockRenderPass.TRANSLUCENT ? pipeline.getTranslucentVertexShaderSource() : pipeline.getTerrainVertexShaderSource();
 
